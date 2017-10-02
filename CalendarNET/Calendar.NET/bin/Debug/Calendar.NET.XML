@@ -1,0 +1,413 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Calendar.NET</name>
+    </assembly>
+    <members>
+        <member name="F:Calendar.NET.CoolButton.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Calendar.NET.CoolButton.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Calendar.NET.CoolButton.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Calendar.NET.EventDetails.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Calendar.NET.EventDetails.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Calendar.NET.EventDetails.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Calendar.NET.RecurringFrequencies">
+            <summary>
+            An enumeration of built-in recurring event frequencies
+            </summary>
+        </member>
+        <member name="F:Calendar.NET.RecurringFrequencies.None">
+            <summary>
+            Indicates that the event is non recurring will occur only one time
+            </summary>
+        </member>
+        <member name="F:Calendar.NET.RecurringFrequencies.Daily">
+            <summary>
+            Indicates that the event will occur every day
+            </summary>
+        </member>
+        <member name="F:Calendar.NET.RecurringFrequencies.EveryWeekday">
+            <summary>
+            Indicates that the event will occur every week day (Mon - Fri)
+            </summary>
+        </member>
+        <member name="F:Calendar.NET.RecurringFrequencies.EveryMonWedFri">
+            <summary>
+            Indicates that the event will occur every Mon, Wed and Fri
+            </summary>
+        </member>
+        <member name="F:Calendar.NET.RecurringFrequencies.EveryTueThurs">
+            <summary>
+            Indicates that the event will occur every Tuesday and Thursday
+            </summary>
+        </member>
+        <member name="F:Calendar.NET.RecurringFrequencies.Weekly">
+            <summary>
+            Indicates that the event will occur every week
+            </summary>
+        </member>
+        <member name="F:Calendar.NET.RecurringFrequencies.Monthly">
+            <summary>
+            Indicates that the event will occur every month
+            </summary>
+        </member>
+        <member name="F:Calendar.NET.RecurringFrequencies.Yearly">
+            <summary>
+            Indicates that the event will occur once a year, on the month and day specified
+            </summary>
+        </member>
+        <member name="F:Calendar.NET.RecurringFrequencies.EveryWeekend">
+            <summary>
+            Indicates that the event will occur every weekend on Saturday and Sunday
+            </summary>
+        </member>
+        <member name="F:Calendar.NET.RecurringFrequencies.Custom">
+            <summary>
+            Indicates that the recuring schedule of this event is unique
+            </summary>
+        </member>
+        <member name="T:Calendar.NET.IEvent">
+            <summary>
+            An interface for creating event types
+            </summary>
+        </member>
+        <member name="M:Calendar.NET.IEvent.Clone">
+            <summary>
+            A function for cloning an event instance
+            </summary>
+            <returns>A cloned <see cref="T:Calendar.NET.IEvent"/></returns>
+        </member>
+        <member name="P:Calendar.NET.IEvent.Date">
+            <summary>
+            The Date that the event occurs
+            </summary>
+        </member>
+        <member name="P:Calendar.NET.IEvent.Enabled">
+            <summary>
+            True if the event is enabled, otherwise false
+            </summary>
+        </member>
+        <member name="P:Calendar.NET.IEvent.RecurringFrequency">
+            <summary>
+            A value indicating how often the event occurs
+            </summary>
+        </member>
+        <member name="P:Calendar.NET.IEvent.EventText">
+            <summary>
+            The name of the event
+            </summary>
+        </member>
+        <member name="P:Calendar.NET.IEvent.EventItems">
+            <summary>
+            The list of items of the event
+            </summary>
+        </member>
+        <member name="P:Calendar.NET.IEvent.EventLengthInHours">
+            <summary>
+            A value indicating the length of the event, in hours.
+            </summary>
+        </member>
+        <member name="P:Calendar.NET.IEvent.EventColor">
+            <summary>
+            The color that the event show up in on the calendar
+            </summary>
+        </member>
+        <member name="P:Calendar.NET.IEvent.EventFont">
+            <summary>
+            The font describing the appearance of the event
+            </summary>
+        </member>
+        <member name="P:Calendar.NET.IEvent.EventTextColor">
+            <summary>
+            The text color of the event
+            </summary>
+        </member>
+        <member name="P:Calendar.NET.IEvent.Rank">
+            <summary>
+            The ranking of the event that determines the order in which it is displayed on a particular day
+            </summary>
+        </member>
+        <member name="P:Calendar.NET.IEvent.IgnoreTimeComponent">
+            <summary>
+            True if the time component of the date can be ignored
+            </summary>
+        </member>
+        <member name="P:Calendar.NET.IEvent.ReadOnlyEvent">
+            <summary>
+            True if the event details cannot be modified
+            </summary>
+        </member>
+        <member name="P:Calendar.NET.IEvent.TooltipEnabled">
+            <summary>
+            True if a tooltip should be displayed when hovering over the event
+            </summary>
+        </member>
+        <member name="P:Calendar.NET.IEvent.ThisDayForwardOnly">
+            <summary>
+            If this is a recurring event, set this to true to make the event show up only from the day specified forward
+            </summary>
+        </member>
+        <member name="P:Calendar.NET.IEvent.CustomRecurringFunction">
+            <summary>
+            Set this to a custom function that will automatically determine if the event should be rendered on a given day.
+            This is only executed if <see cref="P:Calendar.NET.IEvent.RecurringFrequency"/> is set to custom.
+            </summary>
+        </member>
+        <member name="T:Calendar.NET.CustomRecurringFrequenciesHandler">
+            <summary>
+            A delegate for creating custom recurring frequencies
+            </summary>
+            <param name="evnt">The <see cref="T:Calendar.NET.IEvent"/> in question</param>
+            <param name="day">The day in question</param>
+            <returns>Should return a boolean value that indicates if the event should be rendered on the day passed in</returns>
+        </member>
+        <member name="T:Calendar.NET.HolidayEvent">
+            <summary>
+            An event that defines a holiday
+            </summary>
+        </member>
+        <member name="M:Calendar.NET.HolidayEvent.#ctor">
+            <summary>
+            HolidayEvent Constructor
+            </summary>
+        </member>
+        <member name="T:Calendar.NET.CalendarViews">
+            <summary>
+            An enumeration describing various ways to view the calendar
+            </summary>
+        </member>
+        <member name="F:Calendar.NET.CalendarViews.Month">
+            <summary>
+            Renders the Calendar in a month view
+            </summary>
+        </member>
+        <member name="F:Calendar.NET.CalendarViews.Day">
+            <summary>
+            Renders the Calendar in a day view
+            </summary>
+        </member>
+        <member name="T:Calendar.NET.Calendar">
+            <summary>
+            A Winforms Calendar Control
+            </summary>
+        </member>
+        <member name="M:Calendar.NET.Calendar.#ctor">
+            <summary>
+            Calendar Constructor
+            </summary>
+        </member>
+        <member name="M:Calendar.NET.Calendar.AddEvent(Calendar.NET.IEvent)">
+            <summary>
+            Adds an event to the calendar
+            </summary>
+            <param name="calendarEvent">The <see cref="T:Calendar.NET.IEvent"/> to add to the calendar</param>
+        </member>
+        <member name="M:Calendar.NET.Calendar.RemoveEvent(Calendar.NET.IEvent)">
+            <summary>
+            Removes an event from the calendar
+            </summary>
+            <param name="calendarEvent">The <see cref="T:Calendar.NET.IEvent"/> to remove to the calendar</param>
+        </member>
+        <member name="M:Calendar.NET.Calendar.Clearall">
+            <summary>
+            Clear all items from the calendar
+            </summary>
+        </member>
+        <member name="P:Calendar.NET.Calendar.DayViewTimeFont">
+            <summary>
+            Indicates the font for the times on the day view
+            </summary>
+        </member>
+        <member name="P:Calendar.NET.Calendar.CalendarView">
+            <summary>
+            Indicates the type of calendar to render, Month or Day view
+            </summary>
+        </member>
+        <member name="P:Calendar.NET.Calendar.HighlightCurrentDay">
+            <summary>
+            Indicates whether today's date should be highlighted
+            </summary>
+        </member>
+        <member name="P:Calendar.NET.Calendar.SelectedEventDate">
+            <summary>
+            The cliked event date
+            </summary>
+        </member>
+        <member name="P:Calendar.NET.Calendar.Pointedtoevent">
+            <summary>
+            The cliked event date
+            </summary>
+        </member>
+        <member name="P:Calendar.NET.Calendar.AllowEditingEvents">
+            <summary>
+            Indicates whether events can be right-clicked and edited
+            </summary>
+        </member>
+        <member name="P:Calendar.NET.Calendar.DimDisabledEvents">
+            <summary>
+            Indicates whether disabled events will appear as "dimmed".
+            This property is only used if <see cref="P:Calendar.NET.Calendar.ShowDisabledEvents"/> is set to true.
+            </summary>
+        </member>
+        <member name="P:Calendar.NET.Calendar.ShowDashedBorderOnDisabledEvents">
+            <summary>
+            Indicates if a dashed border should show up around disabled events.
+            This property is only used if <see cref="P:Calendar.NET.Calendar.ShowDisabledEvents"/> is set to true.
+            </summary>
+        </member>
+        <member name="P:Calendar.NET.Calendar.ShowDisabledEvents">
+            <summary>
+            Indicates whether disabled events should show up on the calendar control
+            </summary>
+        </member>
+        <member name="P:Calendar.NET.Calendar.LoadPresetHolidays">
+            <summary>
+            Indicates whether Federal Holidays are automatically preloaded onto the calendar
+            </summary>
+        </member>
+        <member name="P:Calendar.NET.Calendar.ShowEventTooltips">
+            <summary>
+            Indicates whether hovering over an event will display a tooltip of the event
+            </summary>
+        </member>
+        <member name="P:Calendar.NET.Calendar.DateHeaderFont">
+            <summary>
+            Get or Set this value to the Font you wish to use to render the date in the upper right corner
+            </summary>
+        </member>
+        <member name="P:Calendar.NET.Calendar.ShowDateInHeader">
+            <summary>
+            Indicates whether the date should be displayed in the upper right hand corner of the calendar control
+            </summary>
+        </member>
+        <member name="P:Calendar.NET.Calendar.ShowArrowControls">
+            <summary>
+            Indicates whether the calendar control should render the previous/next month buttons
+            </summary>
+        </member>
+        <member name="P:Calendar.NET.Calendar.ShowTodayButton">
+            <summary>
+            Indicates whether the calendar control should render the Today button
+            </summary>
+        </member>
+        <member name="P:Calendar.NET.Calendar.TodayFont">
+            <summary>
+            The font used to render the Today button
+            </summary>
+        </member>
+        <member name="P:Calendar.NET.Calendar.DaysFont">
+            <summary>
+            The font used to render the number days on the calendar
+            </summary>
+        </member>
+        <member name="P:Calendar.NET.Calendar.DayOfWeekFont">
+            <summary>
+            The font used to render the days of the week text
+            </summary>
+        </member>
+        <member name="P:Calendar.NET.Calendar.CalendarDate">
+            <summary>
+            The Date that the calendar is currently showing
+            </summary>
+        </member>
+        <member name="T:Calendar.NET.CustomRecurringFunction">
+            <summary>
+            An attribute to mark Custom Recurring Functions
+            </summary>
+        </member>
+        <member name="M:Calendar.NET.CustomRecurringFunction.#ctor(System.String,System.String)">
+            <summary>
+            CustomRecurringFunction Constructor
+            </summary>
+            <param name="name">The name of the function</param>
+            <param name="description">A description of the function</param>
+        </member>
+        <member name="M:Calendar.NET.CustomRecurringFunction.#ctor(System.String)">
+            <summary>
+            CustomRecurringFunction Constructor
+            </summary>
+            <param name="name">The name of the function</param>
+        </member>
+        <member name="P:Calendar.NET.CustomRecurringFunction.Name">
+            <summary>
+            Returns the name of the custom recurring function
+            </summary>
+        </member>
+        <member name="P:Calendar.NET.CustomRecurringFunction.Description">
+            <summary>
+            Returns a description of the custom recurring function
+            </summary>
+        </member>
+        <member name="F:Calendar.NET.ScrollPanel.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Calendar.NET.ScrollPanel.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Calendar.NET.ScrollPanel.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Calendar.NET.EventToolTip.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Calendar.NET.EventToolTip.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Calendar.NET.EventToolTip.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Calendar.NET.CustomEvent">
+            <summary>
+            A custom or user-defined event
+            </summary>
+        </member>
+        <member name="M:Calendar.NET.CustomEvent.#ctor">
+            <summary>
+            CustomEvent Constructor
+            </summary>
+        </member>
+    </members>
+</doc>

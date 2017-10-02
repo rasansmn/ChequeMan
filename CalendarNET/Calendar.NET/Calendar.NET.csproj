@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6CBC43B6-E950-49B2-B14A-563C50FCD5C3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Calendar.NET</RootNamespace>
+    <AssemblyName>Calendar.NET</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Calendar.NET.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Calendar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CalendarEvent.cs" />
+    <Compile Include="CustomEvent.cs" />
+    <Compile Include="CustomRecurringFunctionAttribute.cs" />
+    <Compile Include="EventComparer.cs" />
+    <Compile Include="EventDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventDetails.Designer.cs">
+      <DependentUpon>EventDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventToolTip.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EventToolTip.Designer.cs">
+      <DependentUpon>EventToolTip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HolidayEvent.cs" />
+    <Compile Include="IEvent.cs" />
+    <Compile Include="NavigateLeftButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavigateRightButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RectangleComparer.cs" />
+    <Compile Include="RoundedRectangle.cs" />
+    <Compile Include="CoolButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CoolButton.Designer.cs">
+      <DependentUpon>CoolButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScrollPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ScrollPanel.Designer.cs">
+      <DependentUpon>ScrollPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TodayButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Calendar.resx">
+      <DependentUpon>Calendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoolButton.resx">
+      <DependentUpon>CoolButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventDetails.resx">
+      <DependentUpon>EventDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventToolTip.resx">
+      <DependentUpon>EventToolTip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavigateLeftButton.resx">
+      <DependentUpon>NavigateLeftButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavigateRightButton.resx">
+      <DependentUpon>NavigateRightButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScrollPanel.resx">
+      <DependentUpon>ScrollPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TodayButton.resx">
+      <DependentUpon>TodayButton.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
